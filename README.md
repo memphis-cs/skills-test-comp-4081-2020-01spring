@@ -50,7 +50,7 @@ Once you've completed all of the above, submit your work by doing the following:
 
 1. Stop your screen-capture recording such that a video file containing the recording is now created.
 
-1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s01 video only`.
+1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s01 video only`. Click the "`Record Video`" link to upload your video.
 
     A 15-minute grace period is given beyond the end of the test time for the submission of your video.
 
