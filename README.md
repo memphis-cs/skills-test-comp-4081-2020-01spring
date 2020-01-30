@@ -47,7 +47,8 @@ Your job is to fix the app, making any changes necessary; however, you must foll
 - Your solution must use the existing controller action, and it must also use the `respond_to` block found in that action correctly.
 - Rails view helpers must be used to render the image and the hyperlink. (That is, you may not use plain old HTML for these elements.)
 - In addition to the view helpers, the following HTML tags must be used: `h1`, `p`.
-- Hint: The image is rendered as 200 pixels tall.
+- The image should be rendered as 200 pixels tall.
+- The hyperlink should go to <http://www.memphis.edu/>.
 
 ## Part 3. Test Submission
 
