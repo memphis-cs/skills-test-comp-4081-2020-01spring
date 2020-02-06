@@ -45,7 +45,7 @@ The app is supposed to display the following page when the URL <http://localhost
 
 To complete this app, you must do the following:
 
-1. Generate a `VideoGame` model class and migrations, as per this class diagram:
+1. Generate a `VideoGame` model class and migration, as per this class diagram:
 
    ![A UML class diagram](./comp4081-s03_class_diagram.svg)
 
