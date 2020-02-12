@@ -1,0 +1,24 @@
+<h1>Articles</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th>Author(s)</th>
+      <th>Title</th>
+      <th>Journal</th>
+      <th>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% articles.each do |a| %>
+      <tr>
+        <td><%= a.author %></td>
+        <td><%= a.title %></td>
+        <td><%= a.journal %></td>
+        <td><%= a.year %></td>
+        <td><%= link_to '🔎', article_path(a) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
