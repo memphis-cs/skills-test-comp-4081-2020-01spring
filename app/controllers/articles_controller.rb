@@ -8,9 +8,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    # COMPLETE THIS METHOD!
+    article = Article.find(params[:id])
     respond_to do |format|
-      format.html { render :show }
+      format.html { render :show, locals: { article: article } }
     end
   end
 

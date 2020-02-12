@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Article.create!(
+  author: 'John Maloney, Mitchel Resnick, Natalie Rusk, Brian Silverman, and Evelyn Eastmond',
+  title: 'The Scratch Programming Language and Environment',
+  journal: 'ACM Transactions on Computing Education (TOCE)',
+  year: 2010
+)
+
+Article.create!(
+  author: 'Juha Sorva, Ville Karavirta, and Lauri Malmi',
+  title: 'A Review of Generic Program Visualization Systems for Introductory Programming Education',
+  journal: 'ACM Transactions on Computing Education (TOCE)',
+  year: 2013
+)
+
+Article.create!(
+  author: 'Christopher Douce, David Livingstone, and James Orwell',
+  title: 'Automatic test-based assessment of programming: A review',
+  journal: 'Journal on Educational Resources in Computing (JERIC)',
+  year: 2005
+)
+
+Article.create!(
+  author: 'Frank L. Greitzer, Olga Anna Kuchar, and Kristy Huston',
+  title: 'Cognitive science implications for enhancing training effectiveness in a serious gaming context',
+  journal: 'Journal on Educational Resources in Computing (JERIC)',
+  year: 2007
+)
