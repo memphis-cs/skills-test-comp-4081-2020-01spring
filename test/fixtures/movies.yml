@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id         :bigint           not null, primary key
+#  director   :string
+#  title      :string
+#  year       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Avatar
+  year: 2009
+  director: James Cameron
+
+two:
+  title: Titanic
+  year: 1997
+  director: James Cameron
