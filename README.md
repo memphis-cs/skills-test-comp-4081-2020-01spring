@@ -49,7 +49,7 @@ Clicking a movie hyperlink takes the user to a `show` page for the movie. For ex
 
 To complete this app, you must do the following:
 
-1. Write code that creates seed data as per the table of article data below. (Note that we provided the table below to enable copying and pasting of attribute values, and thus, to speed up data entry.)
+1. Write code that creates seed data as per the table below. (Note that we provided the table below to enable copying and pasting of attribute values, and thus, to speed up data entry.)
 
 1. Seed the database, and run the app. You should see that the `index` page is working, but the `show` page is still incomplete.
 
