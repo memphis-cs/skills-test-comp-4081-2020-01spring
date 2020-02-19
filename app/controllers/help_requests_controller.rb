@@ -9,4 +9,11 @@ class HelpRequestsController < ApplicationController
     end
   end
 
+  def new
+    help_request = HelpRequest.new
+    respond_to do |format|
+      format.html { render :new, locals: { help_request: help_request } }
+    end
+  end
+
 end

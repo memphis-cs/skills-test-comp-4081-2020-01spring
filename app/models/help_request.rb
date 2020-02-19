@@ -12,4 +12,13 @@
 #
 
 class HelpRequest < ApplicationRecord
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :description, presence: true
+  validates :priority,
+    presence: true,
+    inclusion: {
+      in: %w(Critical High Medium Low),
+      message: "%{value} is not a valid priority"
+    }
 end

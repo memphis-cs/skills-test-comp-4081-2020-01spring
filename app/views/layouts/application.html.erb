@@ -11,6 +11,18 @@
 
   <body>
 
+    <% if flash[:success] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+
+    <% if flash[:danger] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+
     <main class="container">
       <%= yield %>
     </main>

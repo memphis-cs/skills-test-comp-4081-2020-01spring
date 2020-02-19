@@ -1,4 +1,4 @@
-# Skills Test S3-Retry
+# Skills Test S5
 
 ## Part 1. Starting the Test
 
@@ -18,7 +18,7 @@
 
     ```bash
     git fetch
-    git checkout --track origin/comp7012-s03retry
+    git checkout --track origin/comp4081-s05
     ```
 
 1. Initialize the project by doing the following:
@@ -28,7 +28,7 @@
 1. Reset the database using this command:
 
     ```bash
-    rails db:migrate:reset
+    rails db:migrate:reset db:seed
     ```
 
 Do nothing further at this point, and read on.
@@ -37,28 +37,31 @@ Do nothing further at this point, and read on.
 
 For this test, you have been given a partially complete Rails app, and it is your job to complete the app.
 
-The app manages help requests, and it is supposed to display the following `index` page when the URL <http://localhost:3000/help_requests> is entered into the browser:
+The app manages helpdesk requests, and it displays the following `index` page when the URL <http://localhost:3000/help_requests> is entered into the browser:
 
-![A screen shot of a webpage](./comp7012-s03retry_after_index.png)
+![A screen shot of a webpage](./comp4081-s05_index.png)
 
-However, if you run the app in its current incomplete state, it will instead display a page that looks like this:
+You can confirm that this page displays correctly by running the app now and opening the above URL in your browser.
 
-![A screen shot of a webpage](./comp7012-s03retry_before_index.png)
+Clicking the "`Submit a new help request!`" link takes the user to a `new` form that looks like this:
 
-To complete this app, you must do the following:
+![A screen shot of a webpage](./comp4081-s05_new.png)
 
-1. Write code that creates seed data as per the table of help-request data below. (Note that we provided the table below to enable copying and pasting of attribute values, and thus, to speed up data entry.)
+However, the app cannot yet handle submissions of the `new` form.
 
-1. Complete the existing `index` controller action and view. In your solution, the data displayed on the `index` page **must** be retrieved from the database by the controller and passed to the view for rendering.
+To complete this app, you must implement the `create` route and controller action such that
 
-Here is the seed data for the app:
+- The action attempts to save a `HelpRequest` model record to the database based on the form data submitted. The action must use the `require` and `permit` methods correctly to help ensure that the app is secure.
 
-| Name             | Email            | Description      | Priority         |
-| ---------------- | ---------------- | ---------------- | ---------------- |
-| Homer Simpson | homer@email.com | Out of donuts! | Critical |
-| Apu Nahasapeemapetilon | apu@kwikemart.com | Squishee machine is broken. | High |
-| Charles Montgomery Burns | monty@burnsinc.com | Nuclear core in meltdown. | Critical |
-| Ned Flanders | ned.flanders@church.org | Society has lost all sense of morality. | Low |
+- If saving is successful, then the browser must be redirected (using an HTTP redirect response) to the `index` page and a flash message (using the `:success` key) must be displayed on the page, as depicted in the following screenshot:
+
+    ![A screen shot of a webpage](./comp4081-s05_create_success.png)
+
+- If saving is unsuccessful, then the `new` view must be rendered again, with the user data filled into the fields and a flash message (using the `:danger` key) must be displayed on the page, as depicted in the following screenshot:
+
+    ![A screen shot of a webpage](./comp4081-s05_create_failure.png)
+
+Hint: All the files you need have been created, and you need only modify the routes and controller files.
 
 ## Part 3. Test Submission
 
@@ -68,24 +71,24 @@ Once you've completed all of the above, submit your work by doing the following:
 
     ```bash
     git add -A
-    git commit -m "Completed comp7012-s03retry"
+    git commit -m "Completed comp4081-s05"
     ```
 
 1. Generate a ZIP archive of your project by running the following command from within the top-level folder of your project's working directory:
 
     ```bash
-    git archive -o ../comp7012-s03retry-submission.zip --prefix=comp7012-s03retry-submission/ HEAD
+    git archive -o ../comp4081-s05-submission.zip --prefix=comp4081-s05-submission/ HEAD
     ```
 
-    This command should result in a file `comp7012-s03retry-submission.zip` being created in your `workspace` folder.
+    This command should result in a file `comp4081-s05-submission.zip` being created in your `workspace` folder.
 
-1. Upload this ZIP file to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp7012-s03retry zip (no video)`.
+1. Upload this ZIP file to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s05 zip (no video)`.
 
     **This step must be completed by the end of the test time.**
 
 1. Stop your screen-capture recording such that a video file containing the recording is now created.
 
-1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp7012-s03retry video only`. Click the "`Record Video`" link to upload your video.
+1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s05 video only`. Click the "`Record Video`" link to upload your video.
 
     A 15-minute grace period is given beyond the end of the test time for the submission of your video.
 

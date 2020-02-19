@@ -1,0 +1,35 @@
+<h1>New Help Request</h1>
+
+<%=
+  form_with(
+    model: help_request,
+    url: help_requests_path,
+    method: :post,
+    local: true,
+    scope: :help_request
+  ) do |f|
+%>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :priority %>
+    <%= f.text_field :priority, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+
+<% end %>
