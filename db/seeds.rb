@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+HelpRequest.create!(
+  name: 'Homer Simpson',
+  email: 'homer@email.com',
+  description: 'Out of donuts!',
+  priority: 'Critical'
+)
+
+HelpRequest.create!(
+  name: 'Apu Nahasapeemapetilon',
+  email: 'apu@kwikemart.com',
+  description: 'Squishee machine is broken.',
+  priority: 'High'
+)
+
+HelpRequest.create!(
+  name: 'Charles Montgomery Burns',
+  email: 'monty@burnsinc.com',
+  description: 'Nuclear core in meltdown.',
+  priority: 'Critical'
+)
+
+HelpRequest.create!(
+  name: 'Ned Flanders',
+  email: 'ned.flanders@church.org',
+  description: 'Society has lost all sense of morality.',
+  priority: 'Low'
+)
