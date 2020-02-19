@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: leases
+#
+#  id           :bigint           not null, primary key
+#  deposit      :integer
+#  monthly_rent :integer
+#  rental       :string
+#  tenant       :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rental: 112 Southern, Apt B
+  tenant: Barry Allen, Bruce Banner
+  monthly_rent: 750
+  deposit: 1000
+
+two:
+  rental: 6558 Poplar
+  tenant: James Howlett
+  monthly_rent: 1250
+  deposit: 800
