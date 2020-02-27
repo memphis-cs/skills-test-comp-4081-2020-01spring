@@ -35,9 +35,9 @@ Do nothing further at this point, and read on.
 
 ## Part 2. Development Tasks
 
-For this test, you have been given a partially complete Rails app for managing population data, and it is your job to complete the app. In particular, there are three main tasks that must complete:
+For this test, you have been given a partially complete Rails app for managing population data, and it is your job to complete the app. In particular, there are three main tasks that you must complete:
 
-1. Update the app's model by adding an class association.
+1. Update the app's model by adding a class association.
 1. Update the seed data to incorporate the changes to the model.
 1. Update the existing `show` page for the parent model class (`Country`) to display child (`City`) objects.
 
