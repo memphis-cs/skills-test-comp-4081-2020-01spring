@@ -1,4 +1,4 @@
-# Skills Test S4
+# Skills Test S5-Retry
 
 ## Part 1. Starting the Test
 
@@ -18,7 +18,7 @@
 
     ```bash
     git fetch
-    git checkout --track origin/comp7012-s04
+    git checkout --track origin/comp4081-s05retry
     ```
 
 1. Initialize the project by doing the following:
@@ -28,28 +28,39 @@
 1. Reset the database using this command:
 
     ```bash
-    rails db:migrate:reset
+    rails db:migrate:reset db:seed
     ```
 
 Do nothing further at this point, and read on.
 
 ## Part 2. Development Tasks
 
-For this test, you have been given an app with a Rails model class, some test fixtures, and a model test.
+For this test, you have been given a partially complete Rails app, and it is your job to complete the app.
 
-The model class is as follows:
+The app manages lease agreements, and it displays the following `index` page when the URL <http://localhost:3000> is entered into the browser:
 
-![A UML class diagram](./comp7012-s04_class_diagram.svg)
+![A screen shot of a webpage](./comp4081-s05retry_index.png)
 
-Your task is to do the following:
+You can confirm that this page displays correctly by running the app now and opening the above URL in your browser.
 
-1. Add a model validation to ensure that the `tenant` attribute cannot be `nil` or blank.
+There are two features that are only partially implemented in this app:
 
-1. Add a model test to verify that this validation functions correctly when the `tenant` attribute is `nil` and when it is blank.
+1. The feature for creating new leases.
+1. The feature for deleting existing leases.
 
-1. Add a custom model validation to ensure that the `deposit` attribute cannot be more than two times the `monthly_rent` attribute. (In the world of this app, it is against the law to have a deposit that is more than two month's rent.)
+Regarding the first feature, currently, if you click the "`Create a new lease`" link on the `index` page, you will see a page that looks like this:
 
-1. Add a model test to verify that this custom validation functions correctly when a `deposit` is more than two times the `monthly_rent`.
+![A screen shot of a webpage](./comp4081-s05retry_new_before.png)
+
+However, this page is supposed to contain a working form, like this:
+
+![A screen shot of a webpage](./comp4081-s05retry_new_after.png)
+
+Regarding the delete feature, the "`destroy`" text in each row of the `index` table is supposed to be a hyperlink that the user can click to delete the corresponding lease; however, currently, the text isn't even a hyperlink.
+
+Your task is to complete these two features so that they work properly.
+
+Hint: The controller and model parts of the app are already complete—you shouldn't need to modify their code at all.
 
 ## Part 3. Test Submission
 
@@ -59,24 +70,24 @@ Once you've completed all of the above, submit your work by doing the following:
 
     ```bash
     git add -A
-    git commit -m "Completed comp7012-s04"
+    git commit -m "Completed comp4081-s05retry"
     ```
 
 1. Generate a ZIP archive of your project by running the following command from within the top-level folder of your project's working directory:
 
     ```bash
-    git archive -o ../comp7012-s04-submission.zip --prefix=comp7012-s04-submission/ HEAD
+    git archive -o ../comp4081-s05retry-submission.zip --prefix=comp4081-s05retry-submission/ HEAD
     ```
 
-    This command should result in a file `comp7012-s04-submission.zip` being created in your `workspace` folder.
+    This command should result in a file `comp4081-s05retry-submission.zip` being created in your `workspace` folder.
 
-1. Upload this ZIP file to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp7012-s04 zip (no video)`.
+1. Upload this ZIP file to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s05retry zip (no video)`.
 
     **This step must be completed by the end of the test time.**
 
 1. Stop your screen-capture recording such that a video file containing the recording is now created.
 
-1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp7012-s04 video only`. Click the "`Record Video`" link to upload your video.
+1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s05retry video only`. Click the "`Record Video`" link to upload your video.
 
     A 15-minute grace period is given beyond the end of the test time for the submission of your video.
 

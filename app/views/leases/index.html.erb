@@ -1,0 +1,31 @@
+<h1 class="my-4">Leases</h1>
+
+<table class="table table-dark table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th>Rental</th>
+      <th>Tenant</th>
+      <th>Monthly Rent</th>
+      <th>Deposit</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% leases.each do |lease| %>
+      <tr>
+        <td><%= lease.rental %></td>
+        <td><%= lease.tenant %></td>
+        <td>$<%= lease.monthly_rent %></td>
+        <td>$<%= lease.deposit %></td>
+        <td>
+          <%= link_to 'show', lease_path(lease) %> |
+          destroy
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Create a new lease', new_lease_path, class: "font-weight-bold" %>
+</p>
