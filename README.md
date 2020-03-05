@@ -1,4 +1,4 @@
-# Skills Test S3
+# Skills Test S7
 
 ## Part 1. Starting the Test
 
@@ -18,7 +18,7 @@
 
     ```bash
     git fetch
-    git checkout --track origin/comp7012-s03
+    git checkout --track origin/comp4081-s07
     ```
 
 1. Initialize the project by doing the following:
@@ -28,47 +28,50 @@
 1. Reset the database using this command:
 
     ```bash
-    rails db:migrate:reset
+    rails db:migrate:reset db:seed
     ```
 
 Do nothing further at this point, and read on.
 
 ## Part 2. Development Tasks
 
-For this test, you have been given a partially complete Rails app, and it is your job to complete the app.
+For this test, you have been given a partially complete Rails app for managing bibliographic citations, and it is your job to complete the app.
 
-The web app is currently broken (so there's no point in trying to run it at this point).
+Here is the current state of the app.
 
-The app manages journal article citations, and it is supposed to display the following `index` page when the URL <http://localhost:3000/articles> is entered into the browser:
+The app currently has two model classes, `User` and `Article`. The app has basic Devise login functionality, and the `User` class was generated with Devise in the usual way. The `Article` class is used to represent citation info for articles. An association has been added between the `User` class and `Article` class to represent which citations were added to the system by which user.
 
-![A screen shot of a webpage](./comp7012-s03_after_index.png)
+The app has seed data, that includes two users and some articles that each user has added to the system.
 
-Clicking the magnifying glass (🔎) hyperlink next to an article should open a `show` page for the article. For example, clicking the link for the second article should bring up a page that looks like this:
+If you run the app and open the URL <http://localhost:3000> in the browser, you will see this `index` page for all the articles stored in the database.
 
-![A screen shot of a webpage](./comp7012-s03_after_show.png)
+![A screen shot of a webpage](./comp4081-s07_articles_index_before.png)
 
-To complete this app, you must do the following:
+Note that this page corresponds to the "`All Articles`" link in the navbar. The "`My Articles`" navbar link is supposed to take a signed-in user to an `index` page with only the articles that that user added to the system. Also, note that the "`🔎`" link next to each article are supposed to take the user to a `show` page with a citation for that particular article. These `🔎` links work the same on both the _All Articles_ and the _My Articles_ `index` pages.
 
-1. Generate an `Article` model class and migration, as per this class diagram:
+If you sign in as the seeded user `alice@email.com`, the _My Articles_ `index` page currently looks like this:
 
-   ![A UML class diagram](./comp7012-s03_class_diagram.svg)
+![A screen shot of a webpage](./comp4081-s07_my_articles_index_before.png)
 
-   **Caution!** The names and types must match this diagram exactly (case sensitive).
+### Task 1. Require Sign-In to Access Certain Pages
 
-1. Write code that creates seed data as per the table of article data below. (Note that we provided the table below to enable copying and pasting of attribute values, and thus, to speed up data entry.)
+Updated the app's code so that users must be signed in in order to access the _My Articles_ `index` page and the `show` pages for articles. Note that users should not need to be signed in in order to access the _All Articles_ `index` page. If a non-signed-in user tries to access one of the secured pages, the app should redirect the user to the sign-in page (the standard behavior provided by Devise).
 
-1. Migrate and seed the database, and run the app. You should see that the `index` page is working, but the `show` page is still incomplete.
+### Task 2. Add an Added-By Column to the All Articles `index` Page
 
-1. Complete the existing `show` controller action and view. The data displayed in the `show` page must be retrieved from the database by the controller and passed to the view for rendering.
+On the _All Articles_ `index` page, add a column to the table that lists the email of the user who added the article to the system, as shown in this screenshot:
 
-Here is the seed data for the app:
+![A screen shot of a webpage](./comp4081-s07_articles_index_after.png)
 
-| Author(s)  |	Title     |	Journal    |	Year      |
-| ---------- | ---------- | ---------- | ---------- |
-| John Maloney, Mitchel Resnick, Natalie Rusk, Brian Silverman, and Evelyn Eastmond | The Scratch Programming Language and Environment | ACM Transactions on Computing Education (TOCE) | 2010 |
-| Juha Sorva, Ville Karavirta, and Lauri Malmi | A Review of Generic Program Visualization Systems for Introductory Programming Education | ACM Transactions on Computing Education (TOCE) | 2013 |
-| Christopher Douce, David Livingstone, and James Orwell | Automatic test-based assessment of programming: A review | Journal on Educational Resources in Computing (JERIC) | 2005 |
-Frank L. Greitzer, Olga Anna Kuchar, and Kristy Huston | Cognitive science implications for enhancing training effectiveness in a serious gaming context | Journal on Educational Resources in Computing (JERIC) | 2007 |
+### Task 3. Add the Current User's Email to the My Articles Heading
+
+On the _My Articles_ `index` page, add the current user's email address to the `h1` heading for the page, as shown in this screenshot:
+
+![A screen shot of a webpage](./comp4081-s07_my_articles_index_after.png)
+
+### Task 4. Fix the Sign-Out Link
+
+The sign-out link on the navbar is currently broken. It currently just hyperlinks the user to the root page of the app. Fix it so that the link actually signs the user out (and redirects the browser to the root page, as is the standard Devise behavior).
 
 ## Part 3. Test Submission
 
@@ -78,24 +81,24 @@ Once you've completed all of the above, submit your work by doing the following:
 
     ```bash
     git add -A
-    git commit -m "Completed comp7012-s03"
+    git commit -m "Completed comp4081-s07"
     ```
 
 1. Generate a ZIP archive of your project by running the following command from within the top-level folder of your project's working directory:
 
     ```bash
-    git archive -o ../comp7012-s03-submission.zip --prefix=comp7012-s03-submission/ HEAD
+    git archive -o ../comp4081-s07-submission.zip --prefix=comp4081-s07-submission/ HEAD
     ```
 
-    This command should result in a file `comp7012-s03-submission.zip` being created in your `workspace` folder.
+    This command should result in a file `comp4081-s07-submission.zip` being created in your `workspace` folder.
 
-1. Upload this ZIP file to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp7012-s03 zip (no video)`.
+1. Upload this ZIP file to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s07 zip (no video)`.
 
     **This step must be completed by the end of the test time.**
 
 1. Stop your screen-capture recording such that a video file containing the recording is now created.
 
-1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp7012-s03 video only`. Click the "`Record Video`" link to upload your video.
+1. Upload your video recording to the [eCourseware](https://elearn.memphis.edu/) dropbox labeled `comp4081-s07 video only`. Click the "`Record Video`" link to upload your video.
 
     A 15-minute grace period is given beyond the end of the test time for the submission of your video.
 
